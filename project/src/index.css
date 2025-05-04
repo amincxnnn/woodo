@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 26 29 39; /* Dark blue/charcoal */
+    --color-primary-light: 39 44 60;
+    --color-secondary: 180 83 9; /* Burnt sienna */
+    --color-secondary-light: 193 112 46;
+    --color-accent: 120 53 15; /* Walnut brown */
+    --color-accent-light: 146 69 25;
+    --color-wood-light: 227 165 107; /* Light wood */
+    --color-wood-medium: 193 112 46; /* Medium wood */
+    --color-wood-dark: 120 53 15; /* Dark wood */
+    --color-success: 34 197 94;
+    --color-warning: 234 179 8;
+    --color-error: 239 68 68;
+    --color-surface: 250 247 244; /* Cream/off-white */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-primary font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-light focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-light focus:ring-secondary;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-white hover:bg-accent-light focus:ring-accent;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-new {
+    @apply badge bg-secondary text-white;
+  }
+
+  .badge-sale {
+    @apply badge bg-error text-white;
+  }
+
+  /* Product card hover effects */
+  .product-card {
+    @apply relative overflow-hidden;
+  }
+
+  .product-card-image {
+    @apply transition-transform duration-500;
+  }
+
+  .product-card-actions {
+    @apply absolute bottom-0 left-0 right-0 bg-white bg-opacity-90 py-3 px-4 transform translate-y-full transition-transform duration-300;
+  }
+}
+
+@layer utilities {
+  .surface {
+    @apply bg-surface;
+  }
+
+  .text-primary {
+    color: rgb(var(--color-primary));
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+}
